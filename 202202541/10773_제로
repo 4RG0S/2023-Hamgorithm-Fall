@@ -1,0 +1,13 @@
+import sys
+input=sys.stdin.readline
+count=int(input())
+ls=[]
+for j in range(count):
+    x=int(input())
+    if(x==0):
+        ls.pop()
+        continue
+    ls.append(x)
+print(sum(ls))
+
+
