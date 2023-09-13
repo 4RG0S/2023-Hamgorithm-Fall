@@ -1,0 +1,36 @@
+import queue
+import sys
+from collections import deque
+input=sys.stdin.readline
+queue=deque()
+count=int(input())
+for k in range(count):
+    name=list(input().split())
+    if name[0]=="push":
+        queue.append(int(name[1]))
+    elif name[0]=="pop":
+        if queue:
+            print(queue.popleft())
+        else:
+            print("-1")
+    elif name[0]=="size":
+        print(len(queue))
+    elif name[0]=="empty":
+        if queue:
+            print(0)
+        else:
+            print(1)
+    elif name[0]=="front":
+        if queue:
+            print(queue[0])
+        else:
+            print("-1")
+    elif name[0]=="back":
+        if queue:
+            print(queue[-1])
+        else:
+            print("-1")
+
+
+
+
