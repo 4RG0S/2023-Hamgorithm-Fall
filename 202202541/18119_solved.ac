@@ -1,0 +1,23 @@
+import sys
+input=sys.stdin.readline
+x=int(input())
+comp=x
+ls=[0]*(x+1)
+if x==0:
+    print(0)
+else:
+    for i in range(1,x+1):
+        y=int(input())
+        ls[i]=y
+    ls.sort()
+    x=x*0.15
+    if x-int(x)>=0.5:
+        x=int(x)+1
+    else :
+        x=int(x)
+    su=sum(ls[x+1:comp-x+1])
+    su=su/float((comp-2*x))
+    if su-int(su)>=0.5:
+        print(int(su)+1)
+    else :
+        print(int(su))
