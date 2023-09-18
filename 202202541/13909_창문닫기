@@ -1,0 +1,7 @@
+import sys
+input=sys.stdin.readline
+i=1
+x=int(input())
+while i*i<=x:
+    i+=1
+print(i-1)
