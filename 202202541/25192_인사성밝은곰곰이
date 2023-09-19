@@ -1,0 +1,16 @@
+import sys
+input=sys.stdin.readline
+x=int(input())
+count=0
+dic={}
+for j in range(x):
+    dan=input().rstrip()
+    if dan in dic.keys():
+        continue
+    elif dan=="ENTER":
+        dic.clear()
+        continue
+    else:
+        dic[dan]=1
+        count+=1
+print(count)
