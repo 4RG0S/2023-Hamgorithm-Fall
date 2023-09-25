@@ -1,0 +1,30 @@
+import sys
+from collections import deque 
+input=sys.stdin.readline
+x=int(input())
+for j in range(x):
+    z,y=map(int,input().split())
+    ls=list(map(int,input().split()))
+    queue=deque()
+    for i in range(z):
+        queue.append(i)
+    count=0
+    while True:
+        w=queue.popleft()
+        max=0
+        for j in range(len(queue)):
+            if max<ls[queue[j]]:
+                max=ls[queue[j]]
+        if ls[w]>=max and w==y:
+            count+=1
+            break
+        elif ls[w]>=max and w!=y:
+            count+=1
+        else:
+            queue.append(w)
+    print(count)
+    ls.clear()
+    queue.clear()
+
+
+
