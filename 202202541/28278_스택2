@@ -1,0 +1,25 @@
+import sys
+input=sys.stdin.readline
+count=int(input())
+stack=[]
+for k in range(count):
+    name=list(input().split())
+    if name[0]=="1":
+        stack.append(int(name[1]))
+    elif name[0]=="2":
+        if stack:
+            print(stack.pop())
+        else:
+            print("-1")
+    elif name[0]=="3":
+        print(len(stack))
+    elif name[0]=="4":
+        if stack:
+            print(0)
+        else:
+            print(1)
+    elif name[0]=="5":
+        if stack:
+            print(stack[-1])
+        else:
+            print("-1")
