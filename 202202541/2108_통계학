@@ -1,0 +1,43 @@
+import sys
+input=sys.stdin.readline
+x=int(input())
+ls=[]
+ls1=[]
+dic={}
+k=0
+cul=0
+for j in range(x):
+    k=int(input())
+    ls.append(k)
+    if k not in dic:
+        dic[k]=1
+    else:
+        dic[k]+=1
+all=sum(ls)
+ls.sort()
+all=all/float(x)
+if all>=0:
+    if all-int(all) >=0.5:
+        all=int(all)+1
+    else:
+        all=int(all)
+else:
+    if all-int(all) <=-0.5:
+        all=int(all)-1
+    else:
+        all=int(all)
+joo=int(x/2)
+max=max(list(dic.values()))
+for key,value in dic.items():
+    if value==max:
+        ls1.append(key)
+if len(ls1)==1:
+    cul=ls1[0]
+else:
+    ls1.sort() 
+    cul=ls1[1]
+
+print(all)
+print(ls[joo])
+print(cul)
+print(ls[x-1]-ls[0])
