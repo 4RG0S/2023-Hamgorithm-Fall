@@ -1,0 +1,32 @@
+import sys
+input=sys.stdin.readline
+num=int(input())
+stack=[]
+compare=[]
+prt=[]
+cpn=0
+for i in range(num):
+    compare.append(int(input()))
+while compare:
+    if len(stack)==0:
+        cpn+=1
+        stack.append(cpn)
+        prt.append("+")
+    elif stack[len(stack)-1]==compare[0]:
+        stack.pop()
+        compare.pop(0)
+        prt.append("-")
+    elif stack[len(stack)-1]!=compare[0]:
+        cpn+=1
+        if cpn>num:
+            break
+        stack.append(cpn)
+        prt.append("+")
+if cpn==num:
+    for j in range(len(prt)):
+        print(prt[j])
+else:
+    print("NO")
+
+
+
