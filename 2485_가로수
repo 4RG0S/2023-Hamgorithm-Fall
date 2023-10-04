@@ -1,0 +1,27 @@
+import sys
+def uclid(x, y):
+    if y == 0:
+        return x
+    else:
+       return uclid(y, x % y)
+input = sys.stdin.readline
+num = int(input())
+ls = []
+com = []
+ls1 = []
+i=0
+for j in range(num):
+    ls.append(int(input()))
+for k in range(len(ls)-2):
+    i=uclid(ls[k+1]-ls[k],ls[k+2]-ls[k+1])
+    com.append(i)
+for r in range(len(ls)-1):
+    ls1.append(ls[r+1]-ls[r])
+count=0
+j = min(com)
+for h in ls1:
+    count+=h//j-1
+print(count)
+
+
+
