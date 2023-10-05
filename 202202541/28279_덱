@@ -1,0 +1,43 @@
+import queue
+import sys
+from collections import deque
+input=sys.stdin.readline
+queue=deque()
+count=int(input())
+for k in range(count):
+    name=list(input().split())
+    if name[0]=="1":
+        queue.appendleft(int(name[1]))
+    elif name[0]=="2":
+        queue.append(int(name[1]))
+    elif name[0]=="3":
+        if queue:
+            print(queue.popleft())
+        else:
+            print("-1")
+    elif name[0]=="4":
+        if queue:
+            print(queue.pop())
+        else:
+            print("-1")
+    elif name[0]=="5":
+        print(len(queue))
+    elif name[0]=="6":
+        if queue:
+            print(0)
+        else:
+            print(1)
+    elif name[0]=="7":
+        if queue:
+            print(queue[0])
+        else:
+            print("-1")
+    elif name[0]=="8":
+        if queue:
+            print(queue[-1])
+        else:
+            print("-1")
+
+
+
+
