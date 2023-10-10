@@ -1,0 +1,21 @@
+n=int(input())
+cnt=0
+
+for i in range(1,n+1,1):
+  li = list(str(i))
+
+  if len(li)<=2:
+    cnt+=1
+    continue
+
+  else:
+    g=int(li[0])-int(li[1])
+    for j in range(len(li)):
+      if j!=len(li)-1:
+        if g==int(li[j])-int(li[j+1]):
+          pass
+      else:
+        if g==int(li[j-1])-int(li[j]):
+          cnt+=1
+
+print(cnt)
