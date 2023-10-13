@@ -1,0 +1,10 @@
+import sys
+input=sys.stdin.readline
+num=int(input())
+ls=[]
+ls=list(map(int,input().split()))
+ls.sort()
+sum=0
+for k in range(1,num+1):
+    sum+=((num-k+1)*ls[k-1])
+print(sum)
