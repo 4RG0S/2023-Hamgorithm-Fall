@@ -1,0 +1,18 @@
+n, k = map(int, input().split())
+p = []
+cnt = 0
+idx = 0
+
+for _ in range(n):
+    p.append(int(input()))
+
+p.reverse()
+
+while k != 0 and idx < n:
+    count = k // p[idx]
+    if count != 0:
+        k %= p[idx]
+        cnt += count
+    idx += 1
+
+print(cnt)
