@@ -1,0 +1,13 @@
+import sys
+
+n,m=map(int, sys.stdin.readline().split())
+d={}
+
+for i in range(1, n + 1):
+    p=sys.stdin.readline().rstrip()
+    d[p]=i
+    d[str(i)]=p
+
+for _ in range(m):
+    q=sys.stdin.readline().rstrip()
+    print(d[q])
