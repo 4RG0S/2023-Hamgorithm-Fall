@@ -1,0 +1,19 @@
+def pd(N, S):
+    char_count = {}
+
+    for i in range(N // 2):
+        char_count[S[i]] = char_count.get(S[i], 0) + 1
+        char_count[S[N - 1 - i]] = char_count.get(S[N - 1 - i], 0) + 1
+
+    odd_count = sum(1 for count in char_count.values() if count % 2 != 0)
+
+    return odd_count <= 1
+
+N = int(input())
+S = input()
+
+result = pd(N, S)
+if result:
+    print("Yes")
+else:
+    print("No")
