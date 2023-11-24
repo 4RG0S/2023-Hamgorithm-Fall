@@ -1,0 +1,22 @@
+n = int(input())
+sequence = [int(input()) for _ in range(n)]
+
+stack = []
+result = []
+curr = 1
+
+for target in sequence:
+    while curr <= target:
+        stack.append(curr)
+        result.append("+")
+        curr += 1
+
+    if stack[-1] == target:
+        stack.pop()
+        result.append("-")
+    else:
+        print("NO")
+        exit(0)
+
+for op in result:
+    print(op)
