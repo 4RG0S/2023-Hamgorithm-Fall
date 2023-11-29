@@ -1,0 +1,10 @@
+def apple(N, M):
+    from itertools import combinations
+    seq = combinations(range(1, N + 1), M)
+    return list(seq)
+
+n,m=map(int,input().split())
+li = apple(n,m)
+
+for a in li:
+    print(*a)
