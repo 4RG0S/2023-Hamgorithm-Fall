@@ -1,0 +1,9 @@
+N, M = map(int, input().split())
+
+nHeard = set(input() for _ in range(N))
+nSeen = set(input() for _ in range(M))
+nhs = sorted(nHeard & nSeen)
+
+print(len(nhs))
+for name in nhs:
+    print(name)

@@ -1,0 +1,5 @@
+a,b=map(int,input().split())
+
+A = set(input().split())
+B = set(input().split())
+print(len(A.union(B))-len(A.intersection(B)))

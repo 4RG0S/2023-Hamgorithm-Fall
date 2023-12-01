@@ -1,0 +1,20 @@
+t = int(input())
+
+for _ in range(t):
+    n, m = map(int, input().split())
+    prr = list(map(int, input().split()))
+
+    qu = [(i, p) for i, p in enumerate(prr)]
+    cnt = 0
+
+    while True:
+        if qu[0][1] == max(qu, key=lambda x: x[1])[1]:
+            cnt += 1
+
+            if qu[0][0] == m:
+                print(cnt)
+                break
+            else:
+                qu.pop(0)
+        else:
+            qu.append(qu.pop(0))

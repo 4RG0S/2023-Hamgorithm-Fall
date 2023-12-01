@@ -1,0 +1,15 @@
+n = int(input())
+d = {}
+
+for i in range(n):
+    s = list(input().split("."))
+    if s[-1] not in d:
+        d[s[-1]] = 1
+    else:
+        d[s[-1]] += 1
+
+elt = list(d.keys())
+elt.sort()
+
+for ext in elt:
+    print(ext, d[ext])

@@ -1,0 +1,9 @@
+n=int(input())
+e=list(map(int,input().split()))
+
+e.sort()
+
+for i in range(len(e)-1):
+  e[i]/=2
+
+print(sum(e))

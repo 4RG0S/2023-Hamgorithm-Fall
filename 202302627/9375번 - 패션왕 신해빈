@@ -1,0 +1,21 @@
+def cloth(c):
+    type_cnt = {}
+    
+    for _, c_type in c:
+        if c_type in type_cnt:
+            type_cnt[c_type] += 1
+        else:
+            type_cnt[c_type] = 1
+    
+    options = 1
+    for cnt in type_cnt.values():
+        options *= (cnt + 1)
+    
+    return options-1
+
+t = int(input())
+    
+for _ in range(t):
+  n = int(input())
+  c = [input().split() for _ in range(n)]     
+  print(cloth(c))

@@ -1,0 +1,16 @@
+n=int(input())
+t=0
+w=[]
+
+for i in range(n):
+  a,c=map(int,input().split())
+  w.append((a,c))
+  
+w.sort()  
+for a,c in w:
+  if a>t:
+    t=a+c
+  else:
+    t+=c
+    
+print(t)
