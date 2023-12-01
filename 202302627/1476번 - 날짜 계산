@@ -1,0 +1,30 @@
+e,s,m = map(int,input().split())
+
+def cal_date(e,s,m):
+  cnt = 0
+  while True:
+    if e==1 and s==1 and m==1:
+      break
+
+    if e-1 > 0:
+      e-= 1
+    else:
+      e = 15
+    
+    if s-1 > 0:
+      s-= 1
+    else:
+      s = 28
+
+    if m-1 > 0:
+      m -= 1
+    else:
+      m = 19
+
+
+    cnt += 1
+    
+  return cnt+1
+
+
+print(cal_date(e,s,m))
